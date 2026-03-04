@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" fill="none">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a84c"/>
+      <stop offset="50%" stop-color="#e8d5a0"/>
+      <stop offset="100%" stop-color="#c9a84c"/>
+    </linearGradient>
+    <linearGradient id="wing-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#e8d5a0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wings (3 feathers sweeping up-left from cargo top) -->
+  <path d="M90 62 Q60 50 30 20 Q35 28 42 38 Q55 52 80 60Z" fill="url(#wing-grad)" opacity="0.6"/>
+  <path d="M95 56 Q58 38 18 8 Q28 20 38 32 Q56 50 85 56Z" fill="url(#wing-grad)" opacity="0.8"/>
+  <path d="M100 50 Q55 24 8 0 Q20 14 35 28 Q58 46 90 52Z" fill="url(#wing-grad)"/>
+
+  <!-- Speed lines -->
+  <line x1="25" y1="52" x2="55" y2="52" stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="35" y1="58" x2="58" y2="58" stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Truck cargo body -->
+  <rect x="88" y="56" width="80" height="46" rx="4" fill="url(#gold-grad)"/>
+
+  <!-- Truck cab -->
+  <path d="M72 68 L88 68 L88 102 L72 102 Q64 102 64 94 L64 82 L72 68Z" fill="url(#gold-grad)"/>
+
+  <!-- Windshield -->
+  <path d="M74 70 L86 70 L86 88 L68 88 L68 82 L74 70Z" fill="#0a1628" opacity="0.7"/>
+
+  <!-- Cab-cargo connection line -->
+  <line x1="88" y1="60" x2="88" y2="102" stroke="#0a1628" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Bottom of truck -->
+  <rect x="62" y="100" width="108" height="6" rx="2" fill="url(#gold-grad)"/>
+
+  <!-- Wheel wells (cutouts) -->
+  <circle cx="82" cy="106" r="16" fill="#0a1628" opacity="0.15"/>
+  <circle cx="148" cy="106" r="16" fill="#0a1628" opacity="0.15"/>
+
+  <!-- Wheels -->
+  <circle cx="82" cy="108" r="14" fill="#0a1628"/>
+  <circle cx="82" cy="108" r="10" fill="#1a2d4d"/>
+  <circle cx="82" cy="108" r="5" fill="url(#gold-grad)"/>
+  <circle cx="82" cy="108" r="2.5" fill="#0a1628"/>
+
+  <circle cx="148" cy="108" r="14" fill="#0a1628"/>
+  <circle cx="148" cy="108" r="10" fill="#1a2d4d"/>
+  <circle cx="148" cy="108" r="5" fill="url(#gold-grad)"/>
+  <circle cx="148" cy="108" r="2.5" fill="#0a1628"/>
+
+  <!-- Headlight -->
+  <rect x="62" y="88" width="4" height="6" rx="1" fill="#e8d5a0" opacity="0.8"/>
+
+  <!-- Rear door lines -->
+  <line x1="168" y1="62" x2="168" y2="98" stroke="#0a1628" stroke-width="1" opacity="0.15"/>
+  <circle cx="165" cy="80" r="1.5" fill="#0a1628" opacity="0.2"/>
+
+  <!-- Cargo top detail line -->
+  <line x1="92" y1="56" x2="168" y2="56" stroke="#e8d5a0" stroke-width="1" opacity="0.4"/>
+</svg>
