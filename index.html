@@ -732,24 +732,41 @@
       </div>
       <div class="coverage-layout">
         <div class="florida-map reveal">
-          <svg viewBox="0 0 300 400" fill="none">
-            <path d="M80 20 L180 10 L220 20 L260 30 L280 50 L275 70 L260 75 L250 90 L245 110 L240 130 L235 150 L228 170 L220 190 L210 210 L200 230 L185 260 L175 280 L168 300 L165 320 L170 340 L180 350 L175 365 L160 370 L140 360 L135 340 L130 310 L125 290 L115 270 L100 250 L90 230 L80 200 L65 170 L55 140 L50 120 L45 100 L50 70 L60 45 L70 30Z" fill="var(--gold)" opacity="0.08" stroke="var(--gold)" stroke-width="1.5" stroke-opacity="0.3"/>
-            <circle cx="165" cy="330" r="5" fill="var(--gold)"><animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/></circle>
-            <text x="175" y="335" fill="var(--gold)" font-size="10" font-weight="600">Miami</text>
-            <circle cx="175" cy="305" r="4" fill="var(--gold)" opacity="0.8"/>
-            <text x="185" y="310" fill="var(--gold-dark)" font-size="9" opacity="0.8">Ft. Lauderdale</text>
-            <circle cx="155" cy="250" r="4" fill="var(--gold)" opacity="0.8"/>
-            <text x="115" y="246" fill="var(--gold-dark)" font-size="9" opacity="0.8">Tampa</text>
-            <circle cx="195" cy="235" r="4" fill="var(--gold)" opacity="0.8"/>
-            <text x="205" y="240" fill="var(--gold-dark)" font-size="9" opacity="0.8">Orlando</text>
-            <circle cx="230" cy="170" r="4" fill="var(--gold)" opacity="0.8"/>
-            <text x="195" y="166" fill="var(--gold-dark)" font-size="9" opacity="0.8">Daytona</text>
-            <circle cx="230" cy="80" r="4" fill="var(--gold)" opacity="0.8"/>
-            <text x="195" y="76" fill="var(--gold-dark)" font-size="9" opacity="0.8">Jacksonville</text>
-            <circle cx="100" cy="240" r="3" fill="var(--gold)" opacity="0.6"/>
-            <text x="55" y="236" fill="var(--gold-dark)" font-size="8" opacity="0.7">Sarasota</text>
-            <circle cx="140" cy="290" r="3" fill="var(--gold)" opacity="0.6"/>
-            <text x="100" y="287" fill="var(--gold-dark)" font-size="8" opacity="0.7">Naples</text>
+          <svg viewBox="0 0 320 460" fill="none">
+            <!-- Accurate Florida outline -->
+            <path d="M48 8 L58 5 L78 2 L100 0 L130 2 L160 5 L185 4 L210 8 L230 14 L248 22 L260 30 L268 40 L272 52 L270 62 L264 68 L256 72 L252 80 L250 92 L248 105 L246 118 L244 132 L241 148 L238 162 L234 178 L230 192 L225 208 L220 222 L214 238 L208 252 L200 268 L192 284 L184 298 L178 312 L174 326 L172 338 L174 350 L178 358 L182 366 L180 374 L174 382 L166 388 L156 392 L148 390 L142 384 L138 374 L134 360 L130 344 L126 326 L120 308 L112 290 L104 272 L96 256 L86 240 L76 224 L66 206 L58 188 L50 168 L44 148 L40 128 L38 108 L36 88 L36 68 L38 48 L42 30 L46 16Z"
+              fill="var(--gold)" opacity="0.08" stroke="var(--gold)" stroke-width="1.5" stroke-opacity="0.3"/>
+            <!-- Florida Keys hint -->
+            <path d="M156 392 Q148 396 138 400 Q128 404 118 406 Q108 408 98 406 Q88 402 80 398"
+              fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-opacity="0.25" stroke-dasharray="4 3"/>
+
+            <!-- Miami - pulsing dot -->
+            <circle cx="172" cy="362" r="5" fill="var(--gold)"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>
+            <text x="182" y="367" fill="var(--gold)" font-size="11" font-weight="600">Miami</text>
+            <!-- Ft. Lauderdale -->
+            <circle cx="178" cy="340" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="188" y="345" fill="var(--gold-dark)" font-size="9" opacity="0.8">Ft. Lauderdale</text>
+            <!-- West Palm Beach -->
+            <circle cx="184" cy="316" r="3.5" fill="var(--gold)" opacity="0.8"/>
+            <text x="194" y="321" fill="var(--gold-dark)" font-size="9" opacity="0.8">W. Palm Beach</text>
+            <!-- Tampa -->
+            <circle cx="96" cy="268" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="52" y="264" fill="var(--gold-dark)" font-size="9" opacity="0.8">Tampa</text>
+            <!-- Orlando -->
+            <circle cx="200" cy="252" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="210" y="257" fill="var(--gold-dark)" font-size="9" opacity="0.8">Orlando</text>
+            <!-- Daytona Beach -->
+            <circle cx="236" cy="192" r="3.5" fill="var(--gold)" opacity="0.8"/>
+            <text x="200" y="186" fill="var(--gold-dark)" font-size="9" opacity="0.8">Daytona</text>
+            <!-- Jacksonville -->
+            <circle cx="248" cy="58" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="210" y="52" fill="var(--gold-dark)" font-size="9" opacity="0.8">Jacksonville</text>
+            <!-- Sarasota -->
+            <circle cx="80" cy="278" r="3" fill="var(--gold)" opacity="0.6"/>
+            <text x="36" y="282" fill="var(--gold-dark)" font-size="8" opacity="0.7">Sarasota</text>
+            <!-- Naples -->
+            <circle cx="112" cy="320" r="3" fill="var(--gold)" opacity="0.6"/>
+            <text x="72" y="316" fill="var(--gold-dark)" font-size="8" opacity="0.7">Naples</text>
           </svg>
         </div>
         <div class="reveal">
