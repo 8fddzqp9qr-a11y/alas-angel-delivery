@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alas de Angel Express | Premium Delivery & Transportation in Florida</title>
+  <meta name="description" content="Premium taxi, airport pickup, and express delivery service across Florida. Licensed, insured, and available 24/7.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #0a1628;
+      --navy-light: #111d32;
+      --navy-mid: #1a2d4d;
+      --gold: #c9a84c;
+      --gold-light: #e8d5a0;
+      --gold-dark: #a68a3a;
+      --gold-glow: rgba(201, 168, 76, 0.12);
+      --cream: #faf8f4;
+      --cream-dark: #f0ebe0;
+      --white: #ffffff;
+      --text: #2d3748;
+      --text-light: #64748b;
+      --whatsapp: #25D366;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(10, 22, 40, 0.08);
+      --shadow-lg: 0 12px 48px rgba(10, 22, 40, 0.12);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .serif { font-family: 'DM Serif Display', serif; font-weight: 400; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .gold-text {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 50px; font-weight: 600;
+      font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer;
+      transition: var(--transition); font-family: inherit; letter-spacing: 0.02em;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy); box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201, 168, 76, 0.4); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-wa { background: var(--whatsapp); color: #fff; }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); }
+    .btn-sm { padding: 10px 22px; font-size: 0.875rem; }
+
+    /* ---- ANIMATIONS ---- */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+    @keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.3); } 50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); } }
+
+    /* ---- HEADER ---- */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 16px 0; transition: var(--transition);
+    }
+    .header.scrolled {
+      background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(16px);
+      padding: 10px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--white);
+    }
+    .logo svg { width: 36px; height: 36px; color: var(--gold); }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo-text span { color: var(--gold); }
+
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a {
+      color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: var(--transition); position: relative;
+    }
+    .nav a:hover { color: var(--gold); }
+    .nav a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--gold); transition: var(--transition);
+    }
+    .nav a:hover::after { width: 100%; }
+
+    .header-phone {
+      color: var(--gold); text-decoration: none; font-weight: 600;
+      font-size: 0.9rem; display: flex; align-items: center; gap: 6px;
+    }
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px; z-index: 1001;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px; background: var(--white);
+      transition: var(--transition); border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      position: fixed; inset: 0; background: rgba(10,22,40,0.98);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 24px; z-index: 999; opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease; backdrop-filter: blur(20px);
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a {
+      color: var(--white); text-decoration: none; font-size: 1.5rem;
+      font-family: 'DM Serif Display', serif; transition: var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy-mid) 100%);
+      overflow: hidden; padding: 120px 0 80px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.06) 0%, transparent 60%);
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 128px; pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .hero-content { color: var(--white); }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 50px; font-size: 0.85rem;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+      color: var(--gold-light); margin-bottom: 24px; font-weight: 500;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 480px;
+      margin-bottom: 32px; line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero-visual {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .wing-svg {
+      width: 100%; max-width: 460px; color: var(--gold);
+      animation: float 6s ease-in-out infinite; filter: drop-shadow(0 0 40px rgba(201,168,76,0.15));
+    }
+    .hero-diagonal {
+      position: absolute; bottom: -2px; left: 0; right: 0; z-index: 2;
+    }
+
+    /* ---- TRUST BAR ---- */
+    .trust-bar {
+      background: linear-gradient(135deg, #fdf8ee, #faf5e4);
+      padding: 32px 0; border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .trust-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 12px; justify-content: center;
+    }
+    .trust-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-icon svg { width: 20px; height: 20px; color: var(--white); }
+    .trust-label { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+    .trust-sub { font-size: 0.78rem; color: var(--text-light); }
+
+    /* ---- SECTION COMMON ---- */
+    .section { padding: 100px 0; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem); color: var(--navy);
+      margin-bottom: 16px; letter-spacing: -0.01em;
+    }
+    .section-header p { color: var(--text-light); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+    .section-tag {
+      display: inline-block; padding: 6px 16px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 12px;
+      background: var(--gold-glow); color: var(--gold-dark);
+    }
+
+    /* ---- SERVICES ---- */
+    .services { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card {
+      background: var(--white); border-radius: var(--radius-lg); padding: 40px 32px;
+      border: 1px solid rgba(0,0,0,0.06); transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0); transition: var(--transition); transform-origin: left;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 14px; margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--gold-glow), rgba(201,168,76,0.05));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .service-icon svg { width: 28px; height: 28px; color: var(--gold); }
+    .service-card h3 { font-size: 1.35rem; color: var(--navy); margin-bottom: 12px; }
+    .service-card p { color: var(--text-light); font-size: 0.93rem; margin-bottom: 20px; line-height: 1.7; }
+    .service-features {
+      list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .service-features li {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.87rem; color: var(--text);
+    }
+    .service-features li svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+
+    /* ---- BOOKING ---- */
+    .booking {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      position: relative;
+    }
+    .booking::after {
+      content: ''; position: absolute; inset: 0; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .booking .section-header h2 { color: var(--white); }
+    .booking .section-header p { color: rgba(255,255,255,0.6); }
+    .booking .section-tag { background: rgba(201,168,76,0.15); }
+    .booking-form {
+      max-width: 800px; margin: 0 auto; position: relative; z-index: 1;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg); padding: 40px;
+      backdrop-filter: blur(10px);
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.7);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .form-group input, .form-group select {
+      padding: 14px 16px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06); color: var(--white);
+      font-family: inherit; font-size: 0.95rem; transition: var(--transition);
+      outline: none;
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group select option { background: var(--navy); color: var(--white); }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--gold); background: rgba(201,168,76,0.06);
+    }
+    .form-submit { text-align: center; margin-top: 28px; }
+
+    /* ---- ABOUT ---- */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .about-content h2 {
+      font-size: clamp(2rem, 4vw, 2.6rem); color: var(--navy); margin-bottom: 20px;
+    }
+    .about-content p { color: var(--text-light); margin-bottom: 16px; line-height: 1.8; font-size: 1rem; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat-card {
+      background: var(--cream); border-radius: var(--radius-lg); padding: 32px 24px;
+      text-align: center; border: 1px solid rgba(201,168,76,0.1);
+      transition: var(--transition);
+    }
+    .stat-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .stat-number {
+      font-family: 'DM Serif Display', serif; font-size: 2.4rem;
+      color: var(--gold); margin-bottom: 4px;
+    }
+    .stat-label { font-size: 0.85rem; color: var(--text-light); font-weight: 600; }
+
+    /* ---- COVERAGE ---- */
+    .coverage { background: var(--cream); }
+    .coverage-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .florida-map { text-align: center; }
+    .florida-map svg { width: 100%; max-width: 380px; }
+    .city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .city-item {
+      display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; font-weight: 500;
+      transition: var(--transition);
+    }
+    .city-item:hover { border-color: var(--gold); }
+    .city-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+
+    /* ---- TESTIMONIALS ---- */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .testimonial-card {
+      background: var(--white); border-radius: var(--radius-lg); padding: 32px;
+      border: 1px solid rgba(0,0,0,0.06); transition: var(--transition);
+      position: relative;
+    }
+    .testimonial-card:hover { box-shadow: var(--shadow); }
+    .testimonial-quote {
+      font-family: 'DM Serif Display', serif; font-size: 3rem;
+      color: var(--gold); line-height: 1; margin-bottom: 8px; opacity: 0.4;
+    }
+    .testimonial-text { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-glow), var(--cream));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--gold); font-size: 1rem;
+    }
+    .testimonial-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+    .testimonial-loc { font-size: 0.8rem; color: var(--text-light); }
+    .stars { display: flex; gap: 2px; margin-bottom: 16px; }
+    .stars svg { width: 16px; height: 16px; color: var(--gold); }
+    .stars .half { color: var(--cream-dark); }
+
+    /* ---- FAQ ---- */
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden; transition: var(--transition);
+    }
+    .faq-item.active { border-color: var(--gold); }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; cursor: pointer; font-weight: 600; font-size: 1rem;
+      color: var(--navy); gap: 16px; transition: var(--transition);
+      background: none; border: none; width: 100%; text-align: left; font-family: inherit;
+    }
+    .faq-q:hover { color: var(--gold); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: var(--gold-glow); display: flex; align-items: center; justify-content: center;
+      transition: var(--transition);
+    }
+    .faq-item.active .faq-icon { background: var(--gold); }
+    .faq-icon svg { width: 14px; height: 14px; color: var(--gold); transition: var(--transition); }
+    .faq-item.active .faq-icon svg { color: var(--white); transform: rotate(45deg); }
+    .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-a-inner { padding-bottom: 20px; color: var(--text-light); font-size: 0.93rem; line-height: 1.7; }
+    .faq-item.active .faq-a { max-height: 300px; }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--navy); color: rgba(255,255,255,0.7); padding: 80px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+    .footer h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
+      color: var(--white); margin-bottom: 20px; font-size: 0.95rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem;
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-contact li {
+      display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem;
+      list-style: none; margin-bottom: 12px;
+    }
+    .footer-contact svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 0; font-size: 0.82rem;
+    }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); display: flex; align-items: center;
+      justify-content: center; transition: var(--transition); color: rgba(255,255,255,0.6);
+    }
+    .footer-social a:hover { background: var(--gold); color: var(--navy); }
+    .footer-social svg { width: 16px; height: 16px; }
+
+    /* ---- MOBILE BOTTOM BAR ---- */
+    .mobile-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 998; background: var(--navy);
+      padding: 12px 16px; gap: 10px;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.3);
+    }
+    .mobile-bar a { flex: 1; text-align: center; border-radius: 50px; padding: 12px; font-weight: 700; font-size: 0.9rem; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1024px) {
+      .hero-grid, .about-grid, .coverage-layout { grid-template-columns: 1fr; }
+      .hero-visual { order: -1; max-width: 320px; margin: 0 auto; }
+      .services-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav, .header-phone { display: none; }
+      .hamburger { display: flex; }
+      .hero { min-height: auto; padding: 120px 0 60px; }
+      .hero h1 { font-size: 2.2rem; }
+      .services-grid, .testimonials-grid, .trust-grid, .stats-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .booking-form { padding: 28px 20px; }
+      .section { padding: 60px 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .mobile-bar { display: flex; }
+      .footer { padding-bottom: 80px; }
+      .city-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M20 4C14 4 8 10 6 16c-1 3 0 6 2 8 3 3 8 4 12 4s9-1 12-4c2-2 3-5 2-8C32 10 26 4 20 4zm0 4c4 0 8 4 9.5 8.5.5 1.5 0 3-1 4-2 2-5 3-8.5 3s-6.5-1-8.5-3c-1-1-1.5-2.5-1-4C12 12 16 8 20 8z" fill="currentColor" opacity="0.3"/><path d="M20 2l-2 8 2 2 2-2-2-8zM10 8l2 8 2.5.5.5-2.5L10 8zM30 8l-5 6.5.5 2.5 2.5-.5 2-8z" fill="currentColor"/></svg>
+        <span class="logo-text">Alas de <span>Angel</span> Express</span>
+      </a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+17869673504" class="header-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          (786) 967-3504
+        </a>
+        <a href="#booking" class="btn btn-gold btn-sm">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#booking" class="btn btn-gold" style="margin-top:16px;">Book Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            Premium Florida Transportation
+          </div>
+          <h1>Swift as Angels,<br><span class="gold-text">Reliable as Wings.</span></h1>
+          <p>Premium delivery and transportation service across Florida. Airport pickups, city-to-city rides, and express parcels — all with the care and speed you deserve.</p>
+          <div class="hero-btns">
+            <a href="tel:+17869673504" class="btn btn-gold">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              Call Now
+            </a>
+            <a href="https://wa.me/17869673504" target="_blank" class="btn btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.496A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.4 0-4.608-.81-6.378-2.168l-.446-.35-3.091 1.037 1.037-3.091-.35-.446A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg class="wing-svg" viewBox="0 0 400 400" fill="none">
+            <defs>
+              <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8d5a0"/></linearGradient>
+              <linearGradient id="wg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c9a84c" stop-opacity="0.6"/><stop offset="100%" stop-color="#e8d5a0" stop-opacity="0.2"/></linearGradient>
+            </defs>
+            <path d="M200 360c0 0-60-40-100-100s-60-130-40-180c10-25 30-45 55-50 20-4 40 2 55 18 10-30 25-45 30-48 5 3 20 18 30 48 15-16 35-22 55-18 25 5 45 25 55 50 20 50 0 120-40 180S200 360 200 360z" fill="url(#wg2)" opacity="0.3"/>
+            <path d="M200 340c0 0-50-35-85-85s-50-110-35-155c8-22 25-38 47-42 18-3 35 2 47 16 12-28 23-42 26-44 3 2 14 16 26 44 12-14 29-19 47-16 22 4 39 20 47 42 15 45 0 105-35 155S200 340 200 340z" fill="url(#wg1)" opacity="0.15"/>
+            <path d="M200 100v220M160 120c10 30 20 80 25 140M240 120c-10 30-20 80-25 140M130 160c15 20 35 60 50 120M270 160c-15 20-35 60-50 120" stroke="url(#wg1)" stroke-width="1" opacity="0.4"/>
+            <circle cx="200" cy="90" r="6" fill="url(#wg1)" opacity="0.8"/>
+            <circle cx="200" cy="90" r="12" fill="none" stroke="url(#wg1)" stroke-width="1" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <svg class="hero-diagonal" viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none">
+      <path d="M0 80L1440 80L1440 30Q720 80 0 0Z" fill="#fdf8ee"/>
+    </svg>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div><div class="trust-label">Licensed & Insured</div><div class="trust-sub">Fully compliant</div></div>
+        </div>
+        <div class="trust-item reveal reveal-delay-1">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div><div class="trust-label">5-Star Rated</div><div class="trust-sub">Trusted by hundreds</div></div>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div><div class="trust-label">On-Time Guarantee</div><div class="trust-sub">Punctual every trip</div></div>
+        </div>
+        <div class="trust-item reveal reveal-delay-3">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="trust-label">Statewide Coverage</div><div class="trust-sub">All of Florida</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Services</span>
+        <h2>How Can We Serve You?</h2>
+        <p>From airport terminals to your front door, we deliver excellence across Florida with three specialized services.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5L2 10l6.9 2.7L5.3 16.3 3 16l-1 2 3.5 1.5L7 23l2-1-.3-2.3 3.6-3.6L15 23l3.3-1.7c.4-.2.6-.6.5-1.1z"/></svg>
+          </div>
+          <h3>Airport Pickup & Drop-off</h3>
+          <p>Premium meet-and-greet service at all major Florida airports. We track your flight so we're always on time.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Personal meet & greet</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Real-time flight tracking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> No shared stops</li>
+          </ul>
+          <a href="#booking" class="btn btn-gold btn-sm">Book This Service</a>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Point-to-Point Transport</h3>
+          <p>City-to-city rides for business, events, or everyday needs. Professional drivers who know every route in Florida.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> City-to-city coverage</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Corporate accounts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Event transportation</li>
+          </ul>
+          <a href="#booking" class="btn btn-gold btn-sm">Book This Service</a>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Express Parcel Delivery</h3>
+          <p>Same-day and next-day parcel delivery across the entire state. Tracked, insured, and handled with care.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Same-day available</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Full tracking & insurance</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Statewide coverage</li>
+          </ul>
+          <a href="#booking" class="btn btn-gold btn-sm">Book This Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section booking" id="booking">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Book a Ride</span>
+        <h2>Request a Quote</h2>
+        <p>Fill in the details below and we'll get back to you within minutes with a personalized quote.</p>
+      </div>
+      <form class="booking-form reveal" onsubmit="return false;">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Service Type</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Airport Pickup / Drop-off</option>
+              <option>Point-to-Point Transportation</option>
+              <option>Express Parcel Delivery</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date">
+          </div>
+          <div class="form-group">
+            <label>Pickup Location</label>
+            <input type="text" placeholder="e.g. Miami International Airport">
+          </div>
+          <div class="form-group">
+            <label>Drop-off Location</label>
+            <input type="text" placeholder="e.g. Fort Lauderdale, FL">
+          </div>
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(xxx) xxx-xxxx">
+          </div>
+          <div class="form-group full form-submit">
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Request Quote
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <span class="section-tag">About Us</span>
+          <h2>Born in Miami,<br>Serving All of Florida</h2>
+          <p>Alas de Angel Express was founded with one mission: to provide Floridians with a transportation and delivery service they can truly rely on. Every ride, every delivery — handled with professionalism and care.</p>
+          <p>Our team of professional, vetted drivers knows every corner of the Sunshine State. Whether you're landing at MIA at midnight or need a parcel in Jacksonville by morning, we've got you covered.</p>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="stat-number" data-count="1000">0</div>
+            <div class="stat-label">Deliveries Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Cities Covered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="24">0</div>
+            <div class="stat-label">Hours Available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="4.9" data-decimal="true">0</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="section coverage" id="coverage">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Coverage Area</span>
+        <h2>We Cover All of Florida</h2>
+        <p>From the Keys to Jacksonville, our network spans the entire state.</p>
+      </div>
+      <div class="coverage-layout">
+        <div class="florida-map reveal">
+          <svg viewBox="0 0 300 400" fill="none">
+            <path d="M80 20 L180 10 L220 20 L260 30 L280 50 L275 70 L260 75 L250 90 L245 110 L240 130 L235 150 L228 170 L220 190 L210 210 L200 230 L185 260 L175 280 L168 300 L165 320 L170 340 L180 350 L175 365 L160 370 L140 360 L135 340 L130 310 L125 290 L115 270 L100 250 L90 230 L80 200 L65 170 L55 140 L50 120 L45 100 L50 70 L60 45 L70 30Z" fill="var(--gold)" opacity="0.08" stroke="var(--gold)" stroke-width="1.5" stroke-opacity="0.3"/>
+            <circle cx="165" cy="330" r="5" fill="var(--gold)"><animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/></circle>
+            <text x="175" y="335" fill="var(--gold)" font-size="10" font-weight="600">Miami</text>
+            <circle cx="175" cy="305" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="185" y="310" fill="var(--gold-dark)" font-size="9" opacity="0.8">Ft. Lauderdale</text>
+            <circle cx="155" cy="250" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="115" y="246" fill="var(--gold-dark)" font-size="9" opacity="0.8">Tampa</text>
+            <circle cx="195" cy="235" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="205" y="240" fill="var(--gold-dark)" font-size="9" opacity="0.8">Orlando</text>
+            <circle cx="230" cy="170" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="195" y="166" fill="var(--gold-dark)" font-size="9" opacity="0.8">Daytona</text>
+            <circle cx="230" cy="80" r="4" fill="var(--gold)" opacity="0.8"/>
+            <text x="195" y="76" fill="var(--gold-dark)" font-size="9" opacity="0.8">Jacksonville</text>
+            <circle cx="100" cy="240" r="3" fill="var(--gold)" opacity="0.6"/>
+            <text x="55" y="236" fill="var(--gold-dark)" font-size="8" opacity="0.7">Sarasota</text>
+            <circle cx="140" cy="290" r="3" fill="var(--gold)" opacity="0.6"/>
+            <text x="100" y="287" fill="var(--gold-dark)" font-size="8" opacity="0.7">Naples</text>
+          </svg>
+        </div>
+        <div class="reveal">
+          <h3 style="font-size:1.5rem;color:var(--navy);margin-bottom:8px;">Major Service Areas</h3>
+          <p style="color:var(--text-light);margin-bottom:24px;font-size:0.93rem;">Pick up and delivery available in all major Florida metro areas and everywhere in between.</p>
+          <div class="city-grid">
+            <div class="city-item"><span class="city-dot"></span>Miami & Miami Beach</div>
+            <div class="city-item"><span class="city-dot"></span>Fort Lauderdale</div>
+            <div class="city-item"><span class="city-dot"></span>West Palm Beach</div>
+            <div class="city-item"><span class="city-dot"></span>Orlando</div>
+            <div class="city-item"><span class="city-dot"></span>Tampa & St. Petersburg</div>
+            <div class="city-item"><span class="city-dot"></span>Jacksonville</div>
+            <div class="city-item"><span class="city-dot"></span>Naples & Sarasota</div>
+            <div class="city-item"><span class="city-dot"></span>Daytona Beach</div>
+            <div class="city-item"><span class="city-dot"></span>Key West & The Keys</div>
+            <div class="city-item"><span class="city-dot"></span>Gainesville</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+        <p>Real experiences from riders and businesses across Florida.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">&ldquo;</div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <p class="testimonial-text">Booked an airport pickup for a red-eye flight. The driver was already waiting when I landed. Clean vehicle, friendly service, and a smooth ride home. Will definitely use again.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MR</div>
+            <div>
+              <div class="testimonial-name">Maria Rodriguez</div>
+              <div class="testimonial-loc">Miami, FL</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-quote">&ldquo;</div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <p class="testimonial-text">We use Alas de Angel for all our corporate transportation in South Florida. Reliable, professional, and always on time. They've become an essential part of our operations.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JT</div>
+            <div>
+              <div class="testimonial-name">James Thompson</div>
+              <div class="testimonial-loc">Fort Lauderdale, FL</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-quote">&ldquo;</div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="half"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <p class="testimonial-text">Needed a same-day parcel delivered from Orlando to Miami. They picked it up within the hour and it arrived safely that evening. The tracking updates were a nice touch too.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">CL</div>
+            <div>
+              <div class="testimonial-name">Carolina Linares</div>
+              <div class="testimonial-loc">Orlando, FL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="background:var(--cream);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">FAQ</span>
+        <h2>Common Questions</h2>
+        <p>Everything you need to know about our services.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q">What services do you offer? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">We offer three core services: airport pickup and drop-off with meet-and-greet, point-to-point transportation between any Florida cities, and express parcel delivery with same-day and next-day options statewide.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">How do I get a price quote? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Use our booking form above, call us at (786) 967-3504, or message us on WhatsApp. We'll provide a quote within minutes based on your pickup/drop-off locations, date, and service type.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">What areas do you cover? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">We cover the entire state of Florida — from the Florida Keys all the way to Jacksonville. Major hubs include Miami, Fort Lauderdale, West Palm Beach, Orlando, Tampa, and everywhere in between.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">Are you available 24/7? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes! We operate 24 hours a day, 7 days a week, including holidays. Whether it's a red-eye airport pickup or an urgent same-day delivery, we're always ready.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">Can I track my delivery? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Absolutely. For parcel deliveries, you'll receive real-time tracking updates via WhatsApp or SMS. For rides, you'll get driver details and live ETA once your booking is confirmed.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">What's your cancellation policy? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Cancellations made more than 2 hours before the scheduled pickup are fully refundable. Cancellations within 2 hours may be subject to a small fee. Contact us and we'll always try to accommodate.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="margin-bottom:4px;">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none"><path d="M20 4C14 4 8 10 6 16c-1 3 0 6 2 8 3 3 8 4 12 4s9-1 12-4c2-2 3-5 2-8C32 10 26 4 20 4z" fill="currentColor" opacity="0.3"/><path d="M20 2l-2 8 2 2 2-2-2-8zM10 8l2 8 2.5.5.5-2.5L10 8zM30 8l-5 6.5.5 2.5 2.5-.5 2-8z" fill="currentColor"/></svg>
+            <span class="logo-text">Alas de <span>Angel</span> Express</span>
+          </a>
+          <p>Premium delivery and transportation service across Florida. Licensed, insured, and committed to getting you there safely.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#coverage">Coverage</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#booking">Book Now</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Service Areas</h4>
+          <ul class="footer-links">
+            <li><a href="#coverage">Miami</a></li>
+            <li><a href="#coverage">Fort Lauderdale</a></li>
+            <li><a href="#coverage">Orlando</a></li>
+            <li><a href="#coverage">Tampa</a></li>
+            <li><a href="#coverage">Jacksonville</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.86.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.95.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href="tel:+17869673504" style="color:inherit;text-decoration:none;">(786) 967-3504</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@alasdeangelexpress.com
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.496A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.4 0-4.608-.81-6.378-2.168l-.446-.35-3.091 1.037 1.037-3.091-.35-.446A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              <a href="https://wa.me/17869673504" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Alas de Angel Express. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM BAR -->
+  <div class="mobile-bar">
+    <a href="tel:+17869673504" class="btn btn-gold" style="display:flex;align-items:center;justify-content:center;gap:8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.86.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.95.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+    <a href="https://wa.me/17869673504" target="_blank" class="btn btn-wa" style="display:flex;align-items:center;justify-content:center;gap:8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.496A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Counter animation
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.dataset.count);
+          const isDecimal = el.dataset.decimal === 'true';
+          const suffix = target >= 100 ? '+' : (target === 24 ? '/7' : '');
+          const duration = 2000;
+          const start = performance.now();
+
+          function update(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = eased * target;
+            el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+  </script>
+</body>
+</html>
